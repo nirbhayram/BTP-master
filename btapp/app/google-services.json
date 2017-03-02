@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "219485396736",
+    "firebase_url": "https://btapp-8e7cc.firebaseio.com",
+    "project_id": "btapp-8e7cc",
+    "storage_bucket": "btapp-8e7cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219485396736:android:350d9850e200ef77",
+        "android_client_info": {
+          "package_name": "com.example.anurag.btapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219485396736-dajhuv1ids0ffbpv93qf0uhr1aksucev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfrkFrIqPjT_TDsHBw6HzfGXTtjSnNPrg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
