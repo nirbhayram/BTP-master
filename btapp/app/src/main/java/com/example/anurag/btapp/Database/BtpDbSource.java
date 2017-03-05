@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 public class BtpDbSource {
     private SQLiteDatabase database;
     private BtpDbHelper dbHelper;
+    private DatabaseReference databaseReference;
     private String columns[] = {BtpContract.BtpEntry._ID,
             BtpContract.BtpEntry.COLUMN_TIME,
             BtpContract.BtpEntry.COLUMN_TEMPERATURE,
@@ -69,4 +73,13 @@ public class BtpDbSource {
         record.setHumidity(cursor.getString(cursor.getColumnIndex(columns[4])));
         return record;
     }
+
+    private void putAllDataOnline(){
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Data");
+    }
+
+    private void getDataOnline(){
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Data");
+    }
+
 }
