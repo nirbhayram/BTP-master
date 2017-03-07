@@ -76,6 +76,7 @@ public class Mainscreen extends AppCompatActivity implements
     CountDownTimer timer;
     private TextFragment textfrag;
     private GraphFragment graphfrag;
+    private MGraphFragment mGraphFragment;
 
     private ArrayAdapter<String> convadapter;
 
@@ -121,14 +122,14 @@ public class Mainscreen extends AppCompatActivity implements
         }
 
         values1 = new LinkedList<String>();
-        GraphFragment.initList(values1, maxCount);
+        //GraphFragment.initList(values1, maxCount);
 
         manager = this.getSupportFragmentManager();
         tabhost = (FragmentTabHost) findViewById(R.id.tabhost1);
         tabhost.setup(this, manager, R.id.tabFrameLayout);
 
         tabhost.addTab(tabhost.newTabSpec("Terminal").setIndicator("terminal"), TextFragment.class, null);
-        tabhost.addTab(tabhost.newTabSpec("Graphs").setIndicator("Graphs"), GraphFragment.class, null);
+        tabhost.addTab(tabhost.newTabSpec("Graphs").setIndicator("Graphs"), MGraphFragment.class, null);
         tabhost.setOnTabChangedListener(this);
 
         timer = new CountDownTimer(sendDelay, sendDelay) {
@@ -436,8 +437,9 @@ public class Mainscreen extends AppCompatActivity implements
         if (fragment.getClass().equals(TextFragment.class)) {
             textfrag = (TextFragment) fragment;
         }
-        if (fragment.getClass().equals(GraphFragment.class)) {
-            graphfrag = (GraphFragment) fragment;
+        if (fragment.getClass().equals(MGraphFragment.class)) {
+            //graphfrag = (GraphFragment) fragment;
+            mGraphFragment=(MGraphFragment)fragment;
         }
         /*else if (fragment.getClass().equals(PPGFragment.class)) {
             ppgFrag = (PPGFragment)fragment;
